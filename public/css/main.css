@@ -1,0 +1,149 @@
+.topbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 8px;
+  background-color: #425afa; 
+  text-align: center;
+}
+
+.topbar i {
+  color: white; 
+}
+
+.topbar span {
+  color: white; 
+  font-size: 2em; 
+  margin-left: 10px; 
+}
+.topbar .right {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.topbar .right a {
+  margin-left: 10px;
+}
+
+.img.product-thumbnail {
+  max-width: 50% !important; /* Limite la largeur à 50% */
+  height: auto !important; /* Conserve les proportions */
+  object-fit: cover; /* Ajuste l'image */
+  border-radius: 8px; /* Coins arrondis */
+}
+
+.nav-link {
+  color: white !important; /* Change la couleur du texte en blanc */
+  font-size: 1.5em; /* Augmente la taille du texte */
+  text-decoration: none; /* Supprime le soulignement */
+}
+
+.nav-link:hover {
+  color: #ffcc00; /* Change la couleur au survol (optionnel) */
+  text-decoration: underline; /* Ajoute un soulignement au survol (optionnel) */
+}
+
+.card.product-element {
+  display: inline-block; /* Permet à la carte de s'adapter à son contenu */
+  width: auto; /* Ajuste la largeur à celle de l'image */
+  border: 1px solid #ddd; /* Ajoute une bordure */
+  border-radius: 8px; /* Coins arrondis */
+  overflow: hidden; /* Empêche le débordement de l'image */
+  text-align: center; /* Centre le contenu */
+}
+
+.card-body {
+  padding: 0; /* Supprime les marges internes pour coller à l'image */
+}
+
+footer.footer {
+  background-color: #425afa; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  text-align: center; /* Centrer le texte */
+  padding: 10px 0; /* Espacement vertical */
+  position: fixed; /* Fixe le footer en bas */
+  bottom: 0; /* Positionne le footer en bas */
+  width: 100%; /* Prend toute la largeur */
+  font-size: 0.9em; /* Taille du texte */
+}
+
+footer.footer a {
+  color: #ffcc00; /* Couleur des liens */
+  text-decoration: none; /* Supprime le soulignement */
+  margin: 0 10px; /* Espacement entre les liens */
+}
+
+footer.footer a:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol */
+}
+
+.auth-form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-form-container h1 {
+  color: #425afa;
+  margin-bottom: 20px;
+}
+
+.auth-form-container input {
+  margin-bottom: 15px;
+}
+
+.auth-form-container a {
+  color: #425afa;
+  text-decoration: none;
+}
+
+.auth-form-container a:hover {
+  text-decoration: underline;
+}
+
+.product-detail {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.product-detail img.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.product-detail h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.product-detail p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.product-detail .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.product-detail .quantity input {
+  width: 60px;
+  text-align: center;
+}
+
+.product-detail .quantity-btn {
+  padding: 5px 10px;
+}

@@ -1,0 +1,22 @@
+block content
+  div(class="auth-form-container")
+    h1 Inscription
+    link(rel="stylesheet" href="/css/main.css")
+    form(class="card" method="post" action="/users/signup")
+      div(class="card-body")
+        div(class="mb-3")
+          label Username
+          input(class="form-control" type="text" name="username" placeholder="Choisissez un nom d'utilisateur")
+        div(class="mb-3")
+          label Email
+          input(class="form-control" type="email" name="email" placeholder="Entrez votre email")
+        div(class="mb-3")
+          label Password
+          input(class="form-control" type="password" name="password" placeholder="Choisissez un mot de passe")
+        if errors
+          ul(class="my-2")
+            each error in errors
+              li(class="text-danger")= error
+        div(class="w-100")
+          input(type="submit" value="S'inscrire" class="btn btn-primary w-100")
+      a(href="/auth/signin/form" class="d-block text-center mt-3") Déjà inscrit ? Connectez-vous.

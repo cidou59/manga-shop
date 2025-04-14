@@ -1,0 +1,10 @@
+div.topbar
+  a(href="/product/new")
+    i.fas.fa-shopping-cart(style="font-size: 4em")
+  span Manga shop
+  div.right
+    if isAuthenticated
+      a(class="nav-link" href="/auth/signout") Déconnexion
+    else    
+      a(class="nav-link" href="/auth/signin/form") Connexion
+      a(class="nav-link" href="/users/signup/form") Inscription

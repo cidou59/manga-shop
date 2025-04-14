@@ -1,0 +1,29 @@
+h1 Add New Product
+  form(action="/products" method="POST")
+  
+    div.form-group
+      label(for="name") Name
+      input#name.form-control(type="text" name="name" required)
+    div.form-group
+      label(for="price") Price
+      input#price.form-control(type="number" name="price" required min="0")
+    div.form-group
+      label(for="imageUrl") Image URL
+      input#imageUrl.form-control(type="text" name="imageUrl" required)
+    div.form-group
+      label(for="description") Description
+      textarea#description.form-control(name="description" maxlength="500")
+    div.form-group
+      label(for="availability") Availability
+      input#availability(type="checkbox" name="availability")
+    div.form-group
+      label(for="category") Category
+      input#category.form-control(type="text" name="category" required)
+    if errors
+      ul(class="my-2")
+        each error in errors
+          li(class="text-danger")= error
+    div(class="w-100")
+    button.btn.btn-primary(type="submit") Add Product
+
+

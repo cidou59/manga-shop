@@ -27,36 +27,61 @@
   margin-left: 10px;
 }
 
-.img.product-thumbnail {
-  max-width: 50% !important; /* Limite la largeur à 50% */
-  height: auto !important; /* Conserve les proportions */
-  object-fit: cover; /* Ajuste l'image */
-  border-radius: 8px; /* Coins arrondis */
+
+
+
+/* Conteneur principal pour la liste des produits */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
 }
 
-.nav-link {
-  color: white !important; /* Change la couleur du texte en blanc */
-  font-size: 1.5em; /* Augmente la taille du texte */
-  text-decoration: none; /* Supprime le soulignement */
+/* Carte produit */
+.product-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
-.nav-link:hover {
-  color: #ffcc00; /* Change la couleur au survol (optionnel) */
-  text-decoration: underline; /* Ajoute un soulignement au survol (optionnel) */
+.product-card:hover {
+  transform: scale(1.05);
 }
 
-.card.product-element {
-  display: inline-block; /* Permet à la carte de s'adapter à son contenu */
-  width: auto; /* Ajuste la largeur à celle de l'image */
-  border: 1px solid #ddd; /* Ajoute une bordure */
-  border-radius: 8px; /* Coins arrondis */
-  overflow: hidden; /* Empêche le débordement de l'image */
-  text-align: center; /* Centre le contenu */
+/* Image du produit */
+.product-image {
+  width: 0%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
 }
 
-.card-body {
-  padding: 0; /* Supprime les marges internes pour coller à l'image */
+/* Informations du produit */
+.product-info {
+  padding: 15px;
 }
+
+.product-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 1.2em;
+  color: #425afa;
+}
+
+
+
+
+
+
 
 footer.footer {
   background-color: #425afa; /* Couleur de fond */
@@ -108,42 +133,91 @@ footer.footer a:hover {
   text-decoration: underline;
 }
 
-.product-detail {
-  max-width: 800px;
-  margin: 50px auto;
-  text-align: center;
+/* Centrer le conteneur principal */
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.product-detail img.product-image {
+/* Mise en page pour afficher l'image à gauche et les infos à droite */
+.product-detail {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Style pour l'image */
+.image-container {
+  flex: 1;
+  max-width: 1000px; /* Augmente la largeur maximale du conteneur */
+  max-height: 1000px; /* Augmente la hauteur maximale du conteneur */
+  overflow: hidden; /* Coupe l'image si elle dépasse le conteneur */
+  border-radius: 8px; /* Coins arrondis (optionnel) */
+}
+
+/* .product-image {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 20px;
+} */
+
+.product-image {
+  width: 100%; /* L'image occupe toute la largeur du conteneur */
+  height: 100%; /* L'image occupe toute la hauteur du conteneur */
+  object-fit: cover; /* Ajuste l'image pour qu'elle remplisse le conteneur sans déformer */
+  border-radius: 8px; /* Coins arrondis (optionnel) */
 }
 
-.product-detail h1 {
+
+/* Style pour les informations */
+.info-container {
+  flex: 2;
+}
+
+.info-container h1 {
   font-size: 2em;
   margin-bottom: 10px;
 }
 
-.product-detail p {
+.info-container p {
   font-size: 1.2em;
   margin-bottom: 10px;
 }
 
-.product-detail .quantity {
+.info-container .quantity {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   margin-top: 20px;
 }
 
-.product-detail .quantity input {
+.info-container .quantity input {
   width: 60px;
   text-align: center;
 }
 
-.product-detail .quantity-btn {
+.quantity-btn {
   padding: 5px 10px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.quantity-btn:hover {
+  background-color: #bbb;
+}
+
+.add-to-cart-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #425afa;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #3548c4;
 }

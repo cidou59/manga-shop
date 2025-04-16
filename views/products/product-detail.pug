@@ -17,10 +17,12 @@ html(lang="en")
             p.status Disponibilité : En stock
           else
             p.status Disponibilité : Indisponible
-          .quantity
-            label(for="quantity") Quantité :
-            button(type="button" class="quantity-btn" id="decrease") -
-            input#quantity(type="number" value="1" min="1")
-            button(type="button" class="quantity-btn" id="increase") +
-          button(type="button" class="add-to-cart-btn") Ajouter au panier
+          form(action="/cart/add" method="POST")
+            input(type="hidden" name="productId" value=product._id)
+            input(type="hidden" name="productName" value=product.name)
+            input(type="hidden" name="productPrice" value=product.price)
+            .quantity
+              label(for="quantity") Quantité :
+              input#quantity(type="number" name="quantity" value="1" min="1")
+            button(type="submit" class="add-to-cart-btn") Ajouter au panier
     include ../includes/footer.pug

@@ -26,14 +26,13 @@
 .topbar .right a {
   color: white; /* Met le texte des liens en blanc */
   text-decoration: none; /* Supprime le soulignement */
-  font-size: 2em; /* Ajuste la taille du texte */
+  font-size: 1.5em; /* Ajuste la taille du texte */
+  margin-right: 15px; /* Ajoute un espacement entre les liens */
 }
 
 .topbar .right a:hover {
   text-decoration: underline; /* Ajoute un soulignement au survol */
 }
-
-
 
 /* Conteneur principal pour la liste des produits */
 .product-list {

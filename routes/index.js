@@ -30,4 +30,16 @@ router.get('/mentions-legales', (req, res) => {
   res.render('mentions-legales');
 });
 
+
+router.get('/cart', (req, res) => {
+  res.render('cart', { isAuthenticated: req.isAuthenticated(), currentUser: req.user });
+});
+
+router.get('/', (req, res) => {
+  if (!req.session.cart) {
+    req.session.cart = []; // Initialiser le panier s'il n'existe pas
+  }
+  res.render('cart', { session: req.session });
+});
+
 module.exports = router;

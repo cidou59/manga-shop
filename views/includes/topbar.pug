@@ -1,10 +1,9 @@
 div.topbar
-  a(href="/product/new")
-    i.fas.fa-shopping-cart(style="font-size: 4em")
-  span Manga shop
+  a(href="/products/new") Manga Shop
   div.right
+    a(href="/cart") Panier
     if isAuthenticated
-      a(class="nav-link" href="/auth/signout") Déconnexion
-    else    
-      a(class="nav-link" href="/auth/signin/form") Connexion
-      a(class="nav-link" href="/users/signup/form") Inscription
+      a(href="/auth/signout") Déconnexion
+    else
+      a(href="/auth/signin/form") Connexion
+      a(href="/users/signup/form") Inscription

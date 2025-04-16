@@ -10,9 +10,9 @@ html(lang="en")
         .image-container
           img(src=product.imageUrl, alt=product.name, class="product-detail-image")
         .info-container
-          h1= product.name
+          h1.product-title= product.name
           p.description= product.description
-          p.price Prix : €#{product.price}
+          p.product-price Prix : €#{product.price}
           if product.availability
             p.status Disponibilité : En stock
           else

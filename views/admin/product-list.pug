@@ -1,0 +1,39 @@
+doctype html
+html(lang="fr")
+  head
+    title KameShop Admin - Gestion des produits
+    link(rel="stylesheet" href="/css/main.css")
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
+  body
+    include ../includes/topbar.pug
+    .container
+      h1 Gestion des produits
+      a(href="/products/new" class="btn btn-primary") Ajouter un produit
+      
+      if products && products.length
+        table.admin-products-table
+          thead
+            tr
+              th Image
+              th Nom
+              th Catégorie
+              th Prix
+              th Stock
+              th Actions
+          tbody
+            each product in products
+              tr
+                td
+                  img(src=product.imageUrl alt=product.name class="admin-product-image")
+                td= product.name
+                td= product.category
+                td €#{product.price}
+                td= product.availability ? "En stock" : "Indisponible"
+                td.actions
+                  a(href=`/products/edit/${product._id}` class="btn btn-edit") Modifier
+                  button(class="btn btn-danger" data-productid=product._id) Supprimer
+      else
+        p Aucun produit disponible.
+
+    script(src="/javascripts/products/product.js")
+    include ../includes/footer.pug 

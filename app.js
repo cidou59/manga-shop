@@ -16,7 +16,7 @@ app.use(morgan('short'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.get('/favicon.ico', (req, res) => res.status(204).end());
 // Configuration des sessions et de l'authentification
 require('./config/session.config')(app);
 require('./config/passport.config')(app);

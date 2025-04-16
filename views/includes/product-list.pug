@@ -1,11 +1,12 @@
 if products && products.length
-    .product-list
-        each product in products
-            .product-card
-                a(href=`/products/${product._id}`)
-                    img(src=product.imageUrl, alt=product.name, class="product-image")
-                .product-info
-                    h2.product-title= product.name
-                    p.product-price Prix : €#{product.price}
+  .product-list
+    each product in products
+      .product-card
+        a(href=`/products/${product._id}`)
+          img(src=product.imageUrl, alt=product.name, class="product-list-image")
+        .product-info
+          h2.product-title= product.name
+          p.product-price Prix : €#{product.price}
+         
 else
-    p Aucun produit trouvé.
+  p Aucun produit trouvé.

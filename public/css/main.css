@@ -34,14 +34,17 @@
 .product-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  gap: 20px; /* Espacement entre les cartes */
+  justify-content: center; /* Centre les cartes horizontalement */
   padding: 20px;
 }
-
 /* Carte produit */
 .product-card {
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px; /* Ajustez la largeur selon vos besoins */
+  height: 700px; /* Ajuste automatiquement la hauteur */
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -50,27 +53,16 @@
   transition: transform 0.2s;
 }
 
-.product-card:hover {
-  transform: scale(1.05);
-}
-
 /* Image du produit */
-.product-image {
-  width: 0%;
-  height: auto;
-  object-fit: cover;
-  border-bottom: 1px solid #ddd;
+.product-list-image {
+  width: 100%; /* L'image occupe toute la largeur du conteneur */
+  height: 500px; /* Hauteur fixe pour uniformiser les vignettes */
+  object-fit: contain; /* Remplit le conteneur tout en maintenant les proportions */
+  border-bottom: 1px solid #ddd; /* Ligne en bas de l'image */
 }
 
-/* Informations du produit */
-.product-info {
-  padding: 15px;
-}
-
-.product-title {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
+.product-info
+ 
 
 .product-price {
   font-size: 1.2em;
@@ -133,91 +125,33 @@ footer.footer a:hover {
   text-decoration: underline;
 }
 
-/* Centrer le conteneur principal */
-.container {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 20px;
-}
 
-/* Mise en page pour afficher l'image à gauche et les infos à droite */
+
+
+
+
 .product-detail {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+  gap: 20px; /* Ajoute un espacement entre l'image et les informations */
+  align-items: flex-start; /* Aligne les éléments en haut */
+  margin-top: 20px; /* Ajoute un espacement en haut */
 }
 
-/* Style pour l'image */
 .image-container {
-  flex: 1;
-  max-width: 1000px; /* Augmente la largeur maximale du conteneur */
-  max-height: 1000px; /* Augmente la hauteur maximale du conteneur */
-  overflow: hidden; /* Coupe l'image si elle dépasse le conteneur */
-  border-radius: 8px; /* Coins arrondis (optionnel) */
+  flex: 1; /* L'image occupe 1 part de l'espace disponible */
+  max-width: 50%; /* Limite la largeur de l'image à 50% */
 }
 
-/* .product-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-} */
-
-.product-image {
+.product-detail-image {
   width: 100%; /* L'image occupe toute la largeur du conteneur */
-  height: 100%; /* L'image occupe toute la hauteur du conteneur */
-  object-fit: cover; /* Ajuste l'image pour qu'elle remplisse le conteneur sans déformer */
-  border-radius: 8px; /* Coins arrondis (optionnel) */
+  max-height: 900px;
+  object-fit: contain; /* Affiche l'image entière sans la couper */
+  border-radius: 8px; /* Coins arrondis */
 }
 
-
-/* Style pour les informations */
 .info-container {
-  flex: 2;
-}
-
-.info-container h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.info-container p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.info-container .quantity {
+  flex: 2; /* Les informations occupent 2 parts de l'espace disponible */
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.info-container .quantity input {
-  width: 60px;
-  text-align: center;
-}
-
-.quantity-btn {
-  padding: 5px 10px;
-  background-color: #ddd;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-
-.quantity-btn:hover {
-  background-color: #bbb;
-}
-
-.add-to-cart-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #425afa;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.add-to-cart-btn:hover {
-  background-color: #3548c4;
+  flex-direction: column; /* Aligne les éléments verticalement */
+  gap: 15px; /* Ajoute un espacement entre les éléments */
 }

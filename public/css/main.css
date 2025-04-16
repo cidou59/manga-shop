@@ -24,9 +24,14 @@
 }
 
 .topbar .right a {
-  margin-left: 10px;
+  color: white; /* Met le texte des liens en blanc */
+  text-decoration: none; /* Supprime le soulignement */
+  font-size: 2em; /* Ajuste la taille du texte */
 }
 
+.topbar .right a:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol */
+}
 
 
 
@@ -159,7 +164,7 @@ footer.footer a:hover {
 
 .add-to-cart-btn {
   padding: 4px 8px; /* Réduit l'espacement interne */
-  font-size: 0.8em; /* Réduit la taille du texte */
+  font-size: 2em; /* Réduit la taille du texte */
   background-color: #425afa; /* Couleur de fond */
   color: white; /* Couleur du texte */
   border: none; /* Supprime les bordures */
@@ -173,7 +178,7 @@ footer.footer a:hover {
   background-color: #2e47d1; /* Couleur au survol */
 }
 
-.product-title {
+.product-titledetail {
   font-size: 4em; /* Taille du texte */
   font-weight: bold; /* Met le texte en gras */
   color: #333; /* Couleur du texte */
@@ -197,8 +202,44 @@ footer.footer a:hover {
 }
 
 .status {
-  font-size: 1.5em; /* Augmente la taille du texte */
+  font-size: 2em; /* Augmente la taille du texte */
   font-weight: normal; /* Texte normal */
   color: #28a745; /* Couleur verte pour "En stock" */
   margin-top: 5px; /* Ajoute un espacement au-dessus */
+}
+
+.quantity {
+  display: flex; /* Aligne les éléments horizontalement */
+  align-items: center; /* Centre verticalement les éléments */
+  gap: 10px; /* Ajoute un espacement entre les éléments */
+  margin-top: 15px; /* Ajoute un espacement au-dessus */
+}
+
+.quantity label {
+  font-size: 2em; /* Taille du texte pour le label */
+  font-weight: bold; /* Met le texte en gras */
+  color: #333; /* Couleur du texte */
+}
+
+.quantity input {
+  width: 60px; /* Largeur de l'input */
+  height: 40px; /* Hauteur de l'input */
+  font-size: 2em; /* Taille du texte */
+  text-align: center; /* Centre le texte dans l'input */
+  border: 1px solid #ddd; /* Bordure de l'input */
+  border-radius: 4px; /* Coins arrondis */
+}
+
+.quantity button {
+  padding: 5px 10px; /* Espacement interne */
+  font-size: 1.2em; /* Taille du texte */
+  background-color: #425afa; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  border: none; /* Supprime les bordures */
+  border-radius: 4px; /* Coins arrondis */
+  cursor: pointer; /* Change le curseur au survol */
+}
+
+.quantity button:hover {
+  background-color: #2e47d1; /* Couleur au survol */
 }

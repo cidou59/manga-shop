@@ -7,37 +7,38 @@ require('./database');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const cartRoutes = require('./routes/cart');
-app.use('/cart', cartRoutes);
-
-
-
-require('./config/session.config')(app);
-require('./config/passport.config')(app);
-
+// Configuration de base
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// Middlewares de base
 app.use(morgan('short'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Configuration des sessions et de l'authentification
+require('./config/session.config')(app);
+require('./config/passport.config')(app);
+
+// Routes
+const cartRoutes = require('./routes/cart');
+app.use('/cart', cartRoutes);
 
 // Middleware pour définir isAuthenticated et currentUser
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.isAuthenticated();
   res.locals.currentUser = req.user;
   next();
+});
 
-  });
-
-
-  app.use((req, res, next) => {
-    if (!req.session.cart) {
-      req.session.cart = []; // Initialiser le panier s'il n'existe pas
-    }
-    next();
-  });
+// Middleware pour initialiser le panier
+app.use((req, res, next) => {
+  if (!req.session.cart) {
+    req.session.cart = [];
+  }
+  next();
+});
 
 app.use(index);
 

@@ -1,0 +1,16 @@
+doctype html
+html(lang="fr")
+  head
+    title Erreur - KameShop
+    link(rel="stylesheet" href="/css/main.css")
+  body
+    include includes/topbar.pug
+    .container
+      .error-container
+        h1 Oops! Une erreur est survenue
+        p= message
+        if error && process.env.NODE_ENV === 'development'
+          pre.error-details
+            code= JSON.stringify(error, null, 2)
+        a(href="/" class="btn btn-primary") Retour à l'accueil
+    include includes/footer.pug 

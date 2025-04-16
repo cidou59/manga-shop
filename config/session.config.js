@@ -1,22 +1,23 @@
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const { clientPromise } = require('../database');
 
 module.exports = (app) => {
   app.use(
     session({
-      secret: 'je suis un secret',
+      secret: process.env.SESSION_SECRET || 'je suis un secret',
       resave: false,
       saveUninitialized: false,
       cookie: {
-        httpOnly: false,
-        maxAge: 1000 * 60 * 60 * 24 * 14,
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 1000 * 60 * 60 * 24 * 14
       },
       store: MongoStore.create({
-        clientPromise: clientPromise,
-        dbName: 'market', // Ajoutez cette ligne pour spécifier le nom de la base de données
+        mongoUrl: process.env.DATABASE_URL,
         ttl: 60 * 60 * 24 * 14,
-      }),
+        autoRemove: 'native',
+        touchAfter: 24 * 3600
+      })
     })
   );
 };

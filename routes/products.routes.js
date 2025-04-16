@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { productList, productNew, productCreate, productDelete, productEdit, productUpdate, productDetail } = require('../controllers/products.controller'); // Assurez-vous que productDetail est inclus ici
-
+const { productList, productNew, productCreate, productDelete, productEdit, productUpdate, productDetail } = require('../controllers/products.controller');
 router.get('/', productList);
 router.get('/new', productNew);
 router.post('/', productCreate);

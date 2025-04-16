@@ -42,6 +42,15 @@ app.use((req, res, next) => {
 
 app.use(index);
 
+// Gestion des erreurs
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render('error', {
+    message: 'Une erreur est survenue',
+    error: process.env.NODE_ENV === 'development' ? err : {}
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
@@ -49,7 +58,7 @@ app.listen(port, () => {
 app.use((req, res, next) => {
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';"
+    "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https:;"
   );
   next();
 });

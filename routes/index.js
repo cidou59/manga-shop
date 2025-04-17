@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const products = require('./products.routes');
+const Product = require('../database/models/product.model');
 const users = require('./users.routes');
 const auth = require('./auth.routes');
 const cart = require('./cart.routes'); // Import des routes du panier

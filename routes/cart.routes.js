@@ -27,4 +27,9 @@ router.post('/add', (req, res) => {
   res.redirect('/cart');
 });
 
+router.get('/', (req, res) => {
+  console.log('Session actuelle :', req.session); // Log de la session
+  res.render('cart', { session: req.session });
+});
+
 module.exports = router;

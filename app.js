@@ -22,7 +22,7 @@ require('./config/session.config')(app);
 require('./config/passport.config')(app);
 
 // Routes
-const cartRoutes = require('./routes/cart.routes');
+const cartRoutes = require('./routes/cart.routes.js');
 app.use('/cart', cartRoutes);
 
 // Middleware pour définir isAuthenticated et currentUser

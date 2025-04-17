@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+// Route pour afficher le panier
 router.get('/', (req, res) => {
   res.render('cart', { session: req.session });
 });
 
-const cartRoutes = require('./routes/cart.routes');
-app.use('/cart', cartRoutes);
-
+// Route pour ajouter un produit au panier
 router.post('/add', (req, res) => {
   console.log('Données reçues pour le panier :', req.body); // Log des données reçues
   const { productId, productName, productPrice, quantity } = req.body;

@@ -21,16 +21,4 @@ router.post('/add', (req, res) => {
   res.redirect('/cart');
 });
 
-router.post('/remove', (req, res) => {
-  const { productId } = req.body;
-  if (req.session.cart) {
-    req.session.cart = req.session.cart.filter(item => item.productId !== productId);
-  }
-  res.redirect('/cart');
-});
-
-router.get('/', (req, res) => {
-  res.render('cart', { session: req.session });
-});
-
 module.exports = router;
